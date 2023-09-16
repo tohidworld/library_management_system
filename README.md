@@ -5,5 +5,5 @@
 
 #### Note: Import Book function will not work on pythonanywhere as it blocks outbound internet access
 
-![ScreenShot](https://github.com/i-saumitra/Voice-controlled-MP3-Player/blob/master/screenshot.jpg)
+![ScreenShot][(https://github.com/tohidworld/library_management_system/blob/main/screenshots/Screenshot%20(32).png)
 
