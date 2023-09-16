@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Book</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    {% include "message.html" %}
+    <div id="container">
+        {% include "navbar.html" %}
+        <div id="title-box"><p id="heading">Issue Book</p></div>
+        <div id="content-box">
+            <form action="{% url 'issue-book' %}" method="post">
+                {% csrf_token %}
+                    <input type="text" name="member-id" id="member-id" required class="input" placeholder="Member Id">
+                    <input type="text" name="book-id" id="book-id" required placeholder="Book Id" class="input">
+                    <button type="submit" id="submit-button" class="btn">Issue Book</button>
+            </form>
+        </div>
+    </div>
+    </body>
+</html>

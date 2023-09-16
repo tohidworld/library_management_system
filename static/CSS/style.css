@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+#container{
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+    min-height: 100vh;
+    width: 100%;
+    padding-bottom: 50px;
+}
+#home{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    background-color: whitesmoke;
+    width: 50%;
+    justify-content: center;
+    gap: 30px;
+}
+#home>a>button{
+    padding: 20px 40px;
+}
+
+
+
+.btn{
+    font-weight: bold;
+    color:white;
+    background-color: black;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    min-height: 40px;
+    min-width: 110px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.btn:hover{
+    background-color: whitesmoke;
+    border: 2px solid black;
+    color: black;
+}
+.input{
+    width: 316px;
+    height: 52px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 1rem;
+    border: none;
+    background-color: #fafafa;
+    outline: none;
+}
+.input:focus{
+    border: 1px solid #0099ff;
+}
+.input:hover{
+    border: 1px solid #0099ff;
+}
+#navbar{
+    height: 80px;
+    margin: 0 auto;
+    display:flex;
+    position: sticky;
+    top:0;
+    flex-direction: row;
+    background: white;
+    justify-content: space-evenly;;
+    align-items: center;
+    border-radius: 1rem;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    padding: 0 2em;
+}
+
+#nav-items{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    list-style-position: center;
+    gap: 10px;
+}
+#nav-items>li{
+    padding:11px 20px;   
+}
+#nav-items>li>a{
+    text-decoration: none; 
+    color: #4c4c4c;
+}
+#nav-items>li:hover{
+    border-radius: 10px;
+    background-color: #f2f2f2;
+}
+header{
+    width: 100%;
+    padding: 20px 0;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+}
+#content{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    padding: 2em 2em;
+    margin-top: 20px;
+    gap: 1rem;
+}
+#heading{
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+}
+#content>table{
+    width: 100%;
+}
+#content>table,tbody,tr, td{
+    border: 1.5px solid grey;
+    border-collapse: collapse;
+}
+#content>table>thead>tr>th{
+    background: black;
+    border-collapse: collapse;
+    border: 1.5px solid grey;
+    color: white;
+}
+#content>table>thead>tr{
+    background: black;
+    position: sticky;
+    top: 80px;
+}
+#content>table>tbody>tr:hover{
+    background: rgb(35, 201, 151);
+    color: white;
+}
+#content>table>tbody>tr>td>a:link{
+    color: #0099ff;
+    text-decoration: none;
+}
+#content>table>tbody>tr>td>a:visited{
+    color: #0099ff;
+}
+#content>a{
+    align-self: end;
+}
+
+.alert {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 5px;
+    animation: hideAnimation 0s ease-in 3s;
+    animation-fill-mode: forwards;
+  }
+.alert-success{
+    background-color: green;
+    color: white;
+}
+.alert-danger{
+    background-color: red;
+    color: white;
+}
+.outstanding_debt{
+    background-color: red;
+}
+@keyframes hideAnimation {
+    to {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+  }
+.search-msg{
+    width: 30%;
+    margin-top: 20px;
+    border-radius: 1rem;
+}
+
+#content-box{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+    /* min-height: 20rem; */
+    padding: 20px 0;
+}
+#title-box{
+    width: 30%;
+    text-align: center;
+    background-color: white;
+    border-radius: 2rem;
+    padding: 10px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+#content-box>form{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    gap: 10px;
+}
+
+#content-box>form>button{
+    margin-top: 10px;
+    align-self: self-end;
+    margin-right: 1rem;
+
+}

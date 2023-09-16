@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transactions</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    {% include "message.html" %}
+    <div id="container">
+        {% include "navbar.html" %}
+        <section id="content">
+            <div><p id="heading">Transactions</p></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Transaction Id</th>
+                        <th>Book Id</th>
+                        <th>Member Id</th>
+                        <th>Issue Date</th>
+                        <th>Return Date</th>
+                        <th>Fine</th>
+                    </tr> 
+                </thead>
+                <tbody>
+                    {% for transaction in transactions %}
+                        <tr>
+                            <td>{{ transaction.id }}</td>
+                            <td>{{ transaction.book.id }}</td>
+                            <td>{{ transaction.member.id }}</td>
+                            <td>{{ transaction.issue_date }}</td>
+                            <td>{{ transaction.return_date }}</td>
+                            <td>{{ transaction.fine }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+</html>

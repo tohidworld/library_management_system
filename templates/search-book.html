@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Book</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div id="container">
+        {% include "navbar.html" %}
+        <div id="title-box"><p id="heading">Search Book</p></div>
+        <div id="content-box">
+            <form action="{% url 'search-book' %}" method="post">
+                {% csrf_token %}
+                    <input type="text" name="title" id="title" class="input" placeholder="Title">
+                    <input type="text" name="author" id="author" placeholder="Author" class="input">
+                    <button type="submit" id="submit-button" class="btn">Search Book</button>
+            </form>
+        </div>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {{ message.tags }} search-msg">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% if books %}
+            <section id="content">
+                <div><p id="heading">Search Result</p></div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Book Id</th>
+                            <th>Title</th>
+                            <th>Authors</th>
+                            <th>ISBN</th>
+                            <th>Publisher</th>
+                            <th>Num pages</th>
+                            <th>Available</th>
+                            <th>Actions</th>
+                        </tr> 
+                    </thead>
+                    <tbody>
+                        {% for book in books %}
+                            <tr>
+                                <td>{{ book.id }}</td>
+                                <td>{{ book.title }}</td>
+                                <td>{{ book.authors }}</td>
+                                <td>{{ book.isbn }}</td>
+                                <td>{{ book.publisher }}</td>
+                                <td>{{ book.num_pages }}</td>
+                                {% if book.available %}
+                                    <td>Yes</td>
+                                {% else %}
+                                    <td>No</td>
+                                {% endif %}
+                                <td>
+                                    <a href="{% url 'edit-book' book.id %}">Edit</a>
+                                    <a href="{% url 'delete-book' book.id %}">Delete</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </section>
+        {% endif %}
+    </div>
+    </body>
+</html>

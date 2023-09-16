@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Library Management System</title>
+</head>
+<body>
+    {% include "message.html" %}
+    <div id="container">
+        <section id="home">
+            <header>
+                <p>Library Management System</p>
+            </header>
+            <a href="{% url 'import-books' %}"><button class="btn">Import Books</button></a>
+            <a href="{% url 'all-books' %}"><button class="btn">Show Books</button></a>
+            <a href="{% url 'search-book' %}"><button class="btn">Search Books</button></a>
+            <a href="{% url 'issue-book' %}"><button class="btn">Issue Book</button></a>
+            <a href="{% url 'return-book' %}"><button class="btn">Return Book</button></a>
+            <a href="{% url 'all-members' %}"><button class="btn">Show Members</button></a>
+            <a href="{% url 'all-transactions' %}"><button class="btn">Show Transactions</button></a>
+        </section>
+
+    </div>
+    <!-- <header>
+        <h1>Library Management System</h1>
+    </header>
+    <section>
+            <a href="{% url 'import-books' %}">
+                <button type="button" class="btn btn-primary">Import Books</button>
+            </a>
+            <a href="{% url 'all-books' %}">
+                <button type="button" class="btn btn-primary">Show All Books</button>
+            </a>
+            <a href="{% url 'issue-book' %}">
+                <button type="button" class="btn btn-primary">Issue Book</button>
+            </a>
+            <a href="{% url 'return-book' %}">
+                <button type="button" class="btn btn-primary">Return Book</button>
+            </a>
+            <a href="{% url 'all-members' %}">
+                <button type="button" class="btn btn-primary">Show All Members</button>
+            </a>
+            <a href="{% url 'all-transactions' %}">
+                <button type="button" class="btn btn-primary">Show Transactions</button>
+            </a>
+    </section> -->
+</body>
+</html>

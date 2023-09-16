@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Book</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    {% include "message.html" %}
+    <div id="container">
+        {% include "navbar.html" %}
+        <div id="title-box"><p id="heading">Return Book</p></div>
+        <div id="content-box">
+            <form action="{% url 'return-book' %}" method="post">
+                {% csrf_token %}
+                    <input type="text" name="book-id" id="book-id" required placeholder="Book Id" class="input">
+                    <input type="number" name="fine" id="fine" required class="input" placeholder="Fine" min="0">
+                    <button type="submit" id="submit-button" class="btn">Return Book</button>
+            </form>
+        </div>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Import Books</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    {% include "message.html" %}
+    <div id="container">
+        {% include "navbar.html" %}
+        <div id="title-box"><p id="heading">Import Books</p></div>
+        <div id="content-box">
+            <form action="{% url 'import-books' %}" method="post">
+                {% csrf_token %}
+                <input type="number" name="number_of_books" min="1" placeholder="Number of books" class="input" required>
+                <input type="text" name="title" placeholder="Title" class="input">
+                <input type="text" name="authors" placeholder="Authors" class="input">
+                <input type="text" name="isbn" placeholder="ISBN" class="input">
+                <input type="text" name="publisher" placeholder="Publisher" class="input">
+                <button type="submit" id="submit-button" class="btn">Import Books</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

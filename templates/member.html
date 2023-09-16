@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Member</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    {% include "message.html" %}
+    <div id="container">
+        {% include "navbar.html" %}
+        <div id="title-box"><p id="heading">Add Member</p></div>
+        <div id="content-box">
+            <form action="{% url 'add-member' %}" method="post" id="member-form">
+                {% csrf_token %}
+                    <input type="text" name="name" id="name" required class="input" placeholder="Name">
+                    <input type="email" name="email" id="email" required placeholder="Email" class="input">
+                    <button type="submit" id="submit-button" class="btn">Add Member</button>
+            </form>
+        </div>
+    </div>
+    {% if member %}
+        <script>
+            document.title = "Update Member";
+            var name = "{{member.name}}";
+            var email = "{{member.email}}";
+            var outstanding_debt = "{{member.outstanding_debt}}";
+            document.getElementById("email").insertAdjacentHTML("afterend", '<div><input type="number" name="outstanding_debt" id="outstanding_debt" required class="input" placeholder="Outstanding Debt"></div>');
+            document.getElementById("heading").innerText = "Update Member";
+            document.getElementById("name").value = name;
+            document.getElementById("email").value = email;
+            document.getElementById("outstanding_debt").value = outstanding_debt;
+            document.getElementById("member-form").setAttribute("action", "{% url 'edit-member' member.id %}"); 
+            document.getElementById("submit-button").innerText = "Update Member";
+        </script>
+    {% endif %}
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Members</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    {% include "message.html" %}
+    <div id="container">
+        {% include "navbar.html" %}
+        <section id="content">
+            <div><p id="heading">Members</p></div>
+            <a href="{% url 'add-member' %}"><button class="btn">Add Member</button></a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Member Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Outstanding Debt</th>
+                        <th>Actions</th>
+                    </tr> 
+                </thead>
+                <tbody>
+                    {% for member in members %}
+                        <tr>
+                            <td>{{ member.id }}</td>
+                            <td>{{ member.name }}</td>
+                            <td>{{ member.email }}</td>
+                            {% if member.outstanding_debt > 500 %}
+                                <td class="outstanding_debt">{{ member.outstanding_debt }}</td>
+                            {% else %}
+                                <td>{{ member.outstanding_debt }}</td>
+                            {% endif %}
+                            <td>
+                                <a href="{% url 'edit-member' member.id %}">Edit</a>
+                                <a href="{% url 'delete-member' member.id %}">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+</html>
